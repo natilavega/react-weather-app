@@ -1,38 +1,139 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  color: #212529;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+.app main {
+  min-height: 90vh;
+}
+  @media (min-width: 768px) {
+    .app main {
+      margin: 0 10vw;
+    }
+  }
+  @media (min-width: 992px) {
+    .app main {
+      margin: 0 20vw;
+    }
+  }
+
+.geolocation-message,
+.timestamp, 
+.search-title, .search-error {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0 15px;
+}
+
+.search-box,
+.weather, .weather-current, 
+.forecast {
+  margin: 50px 0;
+}
+
+.search-box,
+.weather {
+  padding: 0 15px;
+}
+
+.search-wrapper {
+  border: 2px solid #212529;
+  border-radius: 25px;
+  width: 100%;
+}
+  .search-wrapper:focus-within {
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+  }
+
+.search-bar {
+  background-color: #fff;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  padding: 16px;
+  z-index: 1;
+}
+
+.search-btn {
+  background-color: #fff;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  padding: 16px;
+}
+
+.search-error {
+  margin-top: 14px;
+  text-align: center;
+  transition: 0.05s;
+  width: 100%;
+}
+
+.weather-location {
+  cursor: pointer;
+}
+
+.weather-location-city {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.weather-current-temperature {
+  font-size: 100px;
+  font-weight: 300;
+  line-height: 1em;
+}
+
+.weather-current-description {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.weather-current-icon {
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-current-icon img{
+  height: 120px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.forecast {
+  padding: 40px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.forecast .row {
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.forecast-tag {
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.forecast-unit {
+  line-height: 50px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.weather-last_updated, .credits {
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
+}
+
+.credits span {
+  font-weight: 700;
 }

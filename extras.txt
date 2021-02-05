@@ -1,0 +1,44 @@
+WEATHER APP
+https://www.weatherapi.com/docs/
+
+v1
+- Separar componentes                               x
+- Mejorar interfaz                                  x
+- Ilustraciones de fondo para cada tipo de clima    x
+- Botón de búsqueda para dispositivos móviles       x
+- Agregar más información de api gratuita           x
+
+v2
+
+- Cambiar a idioma inglés                           x
+
+v3
+- Cambiar a API con más información                 x
+- Mejorar diseño                                    x
+- Diseño location                                   x
+- Mensaje de error al ingresar una ciudad inválida  x
+- Agregar geolocalización                           x
+- Estilo botón locación presionado (no)             x
+- Footer: créditos                                  x
+    Last update
+    Powered by
+    Developed by
+- Versión para escritorio                           x
+
+v4
+- crear component Forecast                          x
+- crear component Footer                            x
+- cambiar flaticon
+- ocultar barra de navegación
+- Agregar información
+    feels like                                      x
+    viento                                          x
+    visibilidad
+    uv
+- principio única responsabilidad                   x
+
+v5
+- Traducción al español
+- Configuración: elegir unidades de medida
+- helpers
+- hooks
