@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
-import { EnterLocation } from './components/EnterLocation';
-import { Weather } from './components/Weather';
-import { Footer } from './components/Footer';
+import { Content } from './components/layout/Content';
+import { Dictionary } from './components/Dictionary';
 
 const api = {
-  base: 'http://api.weatherapi.com/v1/current.json',
-  key: '2d7871b104ad4d7e9a2150820210102'
+  base: 'https://api.weatherapi.com/v1/current.json',
+  key: process.env.REACT_APP_API_KEY
 }
 
 export class App extends Component {
   state = {
-    query: '',
-    weather: {}
+    location: '',
+    weather: {},
+    settings: {
+      is_open: false,
+      lang: 'en',
+      units: {
+        temperature: 'c',
+        pressure: 'in',
+        precipitation: 'in',
+        wind: 'mph'
+      }
+    },
+    dictionary: undefined
   }
 
   componentDidMount() {
     this.handlePermission();
+    this.getSelectLang();
   }
     
+  // Geolocation
   handlePermission = () => {
     if (navigator.geolocation) {
       navigator.permissions
@@ -52,61 +64,116 @@ export class App extends Component {
   
   setCoords = (coords) => {
     this.setState({
-      query : coords
+      location: coords
     });
 
     this.getWeather();
   }
 
-  handleChange = (e) => {
+  // Manual location
+  handleLocationChange = () => {
+    const input = document.getElementById('formControlLocation').value;
+
     this.setState({
-      query: e.target.value
+      location: input
     })
   }
 
-  handleSubmit = (e) => {
+  handleLocationSubmit = (e) => {
     e.preventDefault();
     this.getWeather();
     e.target.reset();
   }
 
+  handleLocationReturn = () => {
+    this.setState({
+      location: '',
+      weather: ''
+    })
+  }
+
+  //API call
   getWeather = () => {
-    fetch(`${api.base}?key=${api.key}&q=${this.state.query}`)
+    fetch(`${api.base}?key=${api.key}&q=${this.state.location}&lang=${this.state.settings.lang}`)
       .then(res => res.json())
       .then(result => {
         this.setState({
-          query: '',
           weather: result
         })
         //console.log(this.state.weather);
       });
   }
 
-  handleReturn = () => {
+  // Language
+  getSelectLang = () => {
+    const selectLang = Dictionary.filter(data => data.lang === this.state.settings.lang);
+    
     this.setState({
-      weather: ''
-    })
+      dictionary: selectLang[0]
+    });
   }
 
+  // Settings
+  handleSettingsOpen = () => {
+    const newSettings = {
+      ...this.state.settings,
+      is_open: !this.state.settings.is_open
+    }
+
+    this.setState({
+      settings: newSettings
+    });
+  }
+
+  handleLanguageChange = (e) => {
+    const newSettings = {
+      ...this.state.settings,
+      lang: e.target.value
+    }
+
+    this.setState({
+      settings: newSettings
+    }, () => {
+      this.getSelectLang();
+      this.getWeather();
+    });
+  }
+
+  handleUnitsChange = (e) => {
+    const newSettings = {
+      ...this.state.settings,
+      units: {
+        ...this.state.settings.units,
+        [e.target.name] : e.target.id
+      }
+    }
+
+    this.setState({
+      settings: newSettings
+    });
+  }
+
+  // Render
   render() {
     return(
-      <div className='app container'>
-        {this.state.weather.location ?
-          <Weather 
-            weather  = {this.state.weather}
-            onReturn = {this.handleReturn}
-            is_day   = {this.state.is_day}
+      <>
+        {this.state.dictionary ?
+          <Content
+            location         = {this.state.location}
+            weather          = {this.state.weather}
+            settings         = {this.state.settings}
+            dictionary       = {this.state.dictionary}
+            onLocationChange = {this.handleLocationChange}
+            onLocationSubmit = {this.handleLocationSubmit}
+            onLocationReturn = {this.handleLocationReturn}
+            onSettingsOpen   = {this.handleSettingsOpen}
+            onLanguageChange = {this.handleLanguageChange}
+            onUnitsChange    = {this.handleUnitsChange}
           />
-        :
-          <EnterLocation
-            onChange = {this.handleChange} 
-            onSubmit = {this.handleSubmit}
-            onError  = {this.state.weather}
-          />
+        : 
+          console.warn("ERROR. Can't process the request.")
         }
-
-        <Footer />
-      </div>
+      </>
     )
   }  
 }

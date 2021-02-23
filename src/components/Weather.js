@@ -1,14 +1,11 @@
 import React from 'react';
-import { TimeStamp } from './TimeStamp';
 import { CurrentLocation } from './CurrentLocation';
 import { CurrentWeather } from './CurrentWeather';
 import { Forecast } from './Forecast';
 
-export const Weather = ({ weather, onReturn }) => {
+export const Weather = ({ weather, units, dictionary, onReturn }) => {
   return (
     <main>
-      <TimeStamp />
-
       <div className = 'weather'>
         <CurrentLocation
           weather   = {weather}
@@ -17,15 +14,18 @@ export const Weather = ({ weather, onReturn }) => {
 
         <CurrentWeather
           weather = {weather}
+          units   = {units}
         />
 
         <Forecast 
-          weather = {weather}
+          weather    = {weather}
+          units      = {units}
+          dictionary = {dictionary}
         />
       </div>
 
       <div className='weather-last_updated'>
-        Last updated: {weather.current.last_updated}
+        {dictionary.last_updated}: {weather.current.last_updated}
       </div>
     </main>
   )

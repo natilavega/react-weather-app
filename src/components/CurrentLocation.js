@@ -12,6 +12,9 @@ export const CurrentLocation = ({ weather, onReturn }) => {
         {weather.location.name}
       </div>
       <div className='offset-1 weather-location-country'>
+        {weather.location.region}
+      </div>
+      <div className='offset-2 weather-location-country'>
         {weather.location.country}
       </div>
     </div>

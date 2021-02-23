@@ -7,112 +7,253 @@ import {
 
 } from 'react-icons/wi';
 
+const conditionList = [
+  {
+    "code"  : 1000,
+    "day"   : WiDaySunny,
+    "night" : WiNightClear
+  },
+  {
+    "code"  : 1003,
+    "day"   : WiDayCloudy,
+    "night" : WiNightAltCloudy
+  },
+  {
+    "code"  : 1006,
+    "day"   : WiCloud,
+    "night" : WiNightAltCloudy
+  },
+  {
+    "code"  : 1009,
+    "day"   : WiCloudy,
+    "night" : WiCloudy
+  },
+  {
+    "code"  : 1030,
+    "day"   : WiFog,
+    "night" : WiFog
+  },
+  {
+    "code"  : 1063,
+    "day"   : WiDayRain,
+    "night" : WiNightAltRain
+  },
+  {
+    "code"  : 1066,
+    "day"   : WiDaySnow,
+    "night" : WiNightAltSnow
+  },
+  {
+    "code"  : 1069,
+    "day"   : WiDaySleet,
+    "night" : WiNightAltSleet
+  },
+  {
+    "code"  : 1072,
+    "day"   : WiHail,
+    "night" : WiHail
+  },
+  {
+    "code"  : 1087,
+    "day"   : WiDayThunderstorm,
+    "night" : WiNightAltThunderstorm
+  },
+  {
+    "code"  : 1114,
+    "day"   : WiSnow,
+    "night" : WiSnow
+  },
+  {
+    "code"  : 1117,
+    "day"   : WiSnow,
+    "night" : WiSnow
+  },
+  {
+    "code"  : 1135,
+    "day"   : WiFog,
+    "night" : WiFog
+  },
+  {
+    "code"  : 1147,
+    "day"   : WiFog,
+    "night" : WiFog
+  },
+  {
+    "code"  : 1150,
+    "day"   : WiRain,
+    "night" : WiRain
+  },
+  {
+    "code"  : 1153,
+    "day"   : WiRain,
+    "night" : WiRain
+  },
+  {
+    "code"  : 1168,
+    "day"   : WiSleet,
+    "night" : WiSleet
+  },
+  {
+    "code"  : 1171,
+    "day"   : WiSleet,
+    "night" : WiSleet
+  },
+  {
+    "code"  : 1180,
+    "day"   : WiDayRain,
+    "night" : WiNightAltRain
+  },
+  {
+    "code"  : 1183,
+    "day"   : WiRain,
+    "night" : WiRain
+  },
+  {
+    "code"  : 1186,
+    "day"   : WiDayRain,
+    "night" : WiNightAltRain
+  },
+  {
+    "code"  : 1189,
+    "day"   : WiRain,
+    "night" : WiRain
+  },
+  {
+    "code"  : 1192,
+    "day"   : WiDayRain,
+    "night" : WiNightAltRain
+  },
+  {
+    "code"  : 1195,
+    "day"   : WiRain,
+    "night" : WiRain
+  },
+  {
+    "code"  : 1198,
+    "day"   : WiSleet,
+    "night" : WiSleet
+  },
+  {
+    "code"  : 1201,
+    "day"   : WiSleet,
+    "night" : WiSleet
+  },
+  {
+    "code"  : 1204,
+    "day"   : WiSleet,
+    "night" : WiSleet
+  },
+  {
+    "code"  : 1207,
+    "day"   : WiSleet,
+    "night" : WiSleet
+  },
+  {
+    "code"  : 1210,
+    "day"   : WiDaySnow,
+    "night" : WiNightAltSnow
+  },
+  {
+    "code"  : 1213,
+    "day"   : WiSnow,
+    "night" : WiSnow
+  },
+  {
+    "code"  : 1216,
+    "day"   : WiDaySnow,
+    "night" : WiNightAltSnow
+  },
+  {
+    "code"  : 1219,
+    "day"   : WiSnow,
+    "night" : WiSnow
+  },
+  {
+    "code"  : 1222,
+    "day"   : WiDaySnow,
+    "night" : WiNightAltSnow
+  },
+  {
+    "code"  : 1225,
+    "day"   : WiSnow,
+    "night" : WiSnow
+  },
+  {
+    "code"  : 1237,
+    "day"   : WiSprinkle,
+    "night" : WiSprinkle
+  },
+  {
+    "code"  : 1240,
+    "day"   : WiDayRain,
+    "night" : WiNightAltRain
+  },
+  {
+    "code"  : 1243,
+    "day"   : WiDayRain,
+    "night" : WiNightAltRain
+  },
+  {
+    "code"  : 1246,
+    "day"   : WiDayThunderstorm,
+    "night" : WiNightAltThunderstorm
+  },
+  {
+    "code"  : 1249,
+    "day"   : WiDaySleet,
+    "night" : WiNightAltSleet
+  },
+  {
+    "code"  : 1252,
+    "day"   : WiDaySleet,
+    "night" : WiNightAltSleet
+  },
+  {
+    "code"  : 1255,
+    "day"   : WiDaySnow,
+    "night" : WiNightAltSnow
+  },
+  {
+    "code"  : 1258,
+    "day"   : WiDaySnow,
+    "night" : WiNightAltSnow
+  },
+  {
+    "code"  : 1261,
+    "day"   : WiDaySprinkle,
+    "night" : WiNightAltSprinkle
+  },
+  {
+    "code"  : 1264,
+    "day"   : WiDaySprinkle,
+    "night" : WiNightAltSprinkle
+  },
+  {
+    "code"  : 1273,
+    "day"   : WiDayThunderstorm,
+    "night" : WiNightAltThunderstorm
+  },
+  {
+    "code"  : 1276,
+    "day"   : WiThunderstorm,
+    "night" : WiThunderstorm
+  },
+  {
+    "code"  : 1279,
+    "day"   : WiDaySnowThunderstorm,
+    "night" : WiNightAltSnowThunderstorm
+  },
+  {
+    "code"  : 1282,
+    "day"   : WiStormShowers,
+    "night" : WiStormShowers
+  }
+];
+
 class Icon extends Component {
-  day = {
-    sunny                               : WiDaySunny,
-    partlycloudy                        : WiDayCloudy,
-    cloudy                              : WiCloud,
-    overcast                            : WiCloudy,
-    mist                                : WiFog,
-    patchyrainpossible                  : WiDayRain,
-    patchysnowpossible                  : WiDaySnow,
-    patchysleetpossible                 : WiDaySleet,
-    patchyfreezingdrizzlepossible       : WiHail,
-    thunderyoutbreakspossible           : WiDayThunderstorm,
-    blowingsnow                         : WiSnow,
-    blizzard                            : WiSnow,
-    fog                                 : WiFog,
-    freezingfog                         : WiFog,
-    patchylightdrizzle                  : WiRain,
-    lightdrizzle                        : WiRain,
-    freezingdrizzle                     : WiSleet,
-    heavyfreezingdrizzle                : WiSleet,
-    patchylightrain                     : WiDayRain,
-    lightrain                           : WiRain,
-    moderaterainattimes                 : WiDayRain,
-    moderaterain                        : WiRain,
-    heavyrainattimes                    : WiDayRain,
-    heavyrain                           : WiRain,
-    lightfreezingrain                   : WiSleet,
-    moderateorheavyfreezingrain         : WiSleet,
-    lightsleet                          : WiSleet,
-    moderateorheavysleet                : WiSleet,
-    patchylightsnow                     : WiDaySnow,
-    lightsnow                           : WiSnow,
-    patchymoderatesnow                  : WiDaySnow,
-    moderatesnow                        : WiSnow,
-    patchyheavysnow                     : WiDaySnow,
-    heavysnow                           : WiSnow,
-    icepellets                          : WiSprinkle,
-    lightrainshower                     : WiDayRain,
-    moderateorheavyrainshower           : WiDayRain,
-    torrentialrainshower                : WiDayThunderstorm,
-    lightsleetshowers                   : WiDaySleet,
-    moderateorheavysleetshowers         : WiDaySleet,
-    lightsnowshowers                    : WiDaySnow,
-    moderateorheavysnowshowers          : WiDaySnow,
-    lightshowersoficepellets            : WiDaySprinkle,
-    moderateorheavyshowersoficepellets  : WiDaySprinkle,
-    patchylightrainwiththunder          : WiDayThunderstorm,
-    moderateorheavyrainwiththunder      : WiThunderstorm,
-    patchylightsnowwiththunder          : WiDaySnowThunderstorm,
-    moderateorheavysnowwiththunder      : WiStormShowers
-  }
-
-  night = {
-    clear                               : WiNightClear,
-    partlycloudy                        : WiNightAltCloudy,
-    cloudy                              : WiNightAltCloudy,
-    overcast                            : WiCloudy,
-    mist                                : WiFog,
-    patchyrainpossible                  : WiNightAltRain,
-    patchysnowpossible                  : WiNightAltSnow,
-    patchysleetpossible                 : WiNightAltSleet,
-    patchyfreezingdrizzlepossible       : WiHail,
-    thunderyoutbreakspossible           : WiNightAltThunderstorm,
-    blowingsnow                         : WiSnow,
-    blizzard                            : WiSnow,
-    fog                                 : WiFog,
-    freezingfog                         : WiFog,
-    patchylightdrizzle                  : WiRain,
-    lightdrizzle                        : WiRain,
-    freezingdrizzle                     : WiSleet,
-    heavyfreezingdrizzle                : WiSleet,
-    patchylightrain                     : WiNightAltRain,
-    lightrain                           : WiRain,
-    moderaterainattimes                 : WiNightAltRain,
-    moderaterain                        : WiRain,
-    heavyrainattimes                    : WiNightAltRain,
-    heavyrain                           : WiRain,
-    lightfreezingrain                   : WiSleet,
-    moderateorheavyfreezingrain         : WiSleet,
-    lightsleet                          : WiSleet,
-    moderateorheavysleet                : WiSleet,
-    patchylightsnow                     : WiNightAltSnow,
-    lightsnow                           : WiSnow,
-    patchymoderatesnow                  : WiNightAltSnow,
-    moderatesnow                        : WiSnow,
-    patchyheavysnow                     : WiNightAltSnow,
-    heavysnow                           : WiSnow,
-    icepellets                          : WiSprinkle,
-    lightrainshower                     : WiNightAltRain,
-    moderateorheavyrainshower           : WiNightAltRain,
-    torrentialrainshower                : WiNightAltThunderstorm,
-    lightsleetshowers                   : WiNightAltSleet,
-    moderateorheavysleetshowers         : WiNightAltSleet,
-    lightsnowshowers                    : WiNightAltSnow,
-    moderateorheavysnowshowers          : WiNightAltSnow,
-    lightshowersoficepellets            : WiNightAltSprinkle,
-    moderateorheavyshowersoficepellets  : WiNightAltSprinkle,
-    patchylightrainwiththunder          : WiNightAltThunderstorm,
-    moderateorheavyrainwiththunder      : WiThunderstorm,
-    patchylightsnowwiththunder          : WiNightAltSnowThunderstorm,
-    moderateorheavysnowwiththunder      : WiStormShowers
-  }
-
-  tag = this.props.tag.replace(/\s/g, '').toLowerCase();
   
-  icon = this.props.is_day === 1 ? this.day[this.tag] : this.night[this.tag];
+  condition = conditionList.filter(condition => condition.code === this.props.code);
+  icon = this.props.is_day === 1 ? this.condition[0].day : this.condition[0].night;
   
   render() {
     const IconTag = this.icon;

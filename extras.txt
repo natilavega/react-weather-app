@@ -38,7 +38,22 @@ v4
 - principio única responsabilidad                   x
 
 v5
+- Organización de componentes                       x
 - Traducción al español
-- Configuración: elegir unidades de medida
+  traducir etiquetas                                x
+  traducir direccion del viento
+  sacar objeto filtrado de array para traducir      x
+  condicionales para traducción                     x
+  arreglar opciones de languaje en settings         x
+- Ajustar css header y enter-location               x
+
+v6
+- agregar fecha en Header                           x
+- traducir dirección del viento
+- Configuración: elegir unidades de medida          x
+    Temperatura: celsius - fahrenheit
+    Precipitación: mm - in 
+    Presión: mb - in
+    Viento: mph - kph
 - helpers
 - hooks

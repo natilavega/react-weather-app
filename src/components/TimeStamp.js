@@ -1,27 +1,24 @@
 import React from 'react';
 
-export const TimeStamp = () => {
+export const TimeStamp = ({ currentLang, dateLang }) => {
   const dateBuilder = (d) => {
-    let months = [ 
-      'January', 'February', 'March', 'April', 'May', 'June', 'July', 
-      'August', 'September', 'October', 'November', 'December'
-    ]
-
-    let days = [
-      'Sunday', 'Monday', 'Tuesday', 'Wednesday',
-      'Thursday', 'Friday', 'Saturday'
-    ]
-
-    let day = days[d.getDay()];
+    let day = dateLang.day[d.getDay()];
     let date = d.getDate();
-    let month = months[d.getMonth()];
+    let month = dateLang.month[d.getMonth()];
 
-    return `${day}, ${month} ${date}`
+    let display;
+
+    currentLang === 'en' ?
+      display = `${day}, ${month} ${date}`
+    :
+      display = `${day} ${date} ${month} `
+    
+    return display;
   }
   
   return (
-    <div className='timestamp'>
+    <>
       {dateBuilder(new Date())}
-    </div>
+    </>
   );
 }
