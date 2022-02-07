@@ -19,7 +19,7 @@ export const Content = ({
 }) => {
   
   return(
-    <div className='app container'>    
+    <div className='app'>    
       {!settings.is_open ? 
         (weather.location ?
           

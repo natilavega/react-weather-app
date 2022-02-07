@@ -24,18 +24,21 @@ html {
 .header .col-11, .header .col-1 {
   padding: 0 !important;
 }
+.header .col-1 {
+  text-align: right;
+}
 
   @media (min-width: 768px) {
-    .app main, .header {
+    .app {
       margin: 0 10vw;
     }
 
     .header {
-      padding: 50px 0;
+      padding: 50px 25px;
     }
   }
   @media (min-width: 992px) {
-    .app main, .header {
+    .app {
       margin: 0 20vw;
     }
   }
@@ -130,6 +133,9 @@ main {
 }
 .forecast-unit {
   line-height: 50px;
+}
+.feels_like {
+  margin: 0 15px 20px 15px;
 }
 
 .settings-group {

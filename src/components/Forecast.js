@@ -7,7 +7,7 @@ export const Forecast = ({ weather, units, dictionary }) => {
     <div className = 'forecast'>
 
       <div className='row'>
-        <div className='col-5 forecast-tag'>
+        <div className='forecast-tag feels_like'>
           {dictionary.feels_like}
         </div>
         <div>
@@ -44,9 +44,9 @@ export const Forecast = ({ weather, units, dictionary }) => {
             </div>
             <div className='col-8 forecast-unit'>
               {units.pressure === 'in' ?
-                weather.current.pressure_in +'in'
+                weather.current.pressure_in +' in'
               :
-                weather.current.pressure_mb +'mb'
+                weather.current.pressure_mb +' mb'
               }
             </div> 
           </div>
@@ -64,9 +64,9 @@ export const Forecast = ({ weather, units, dictionary }) => {
             </div>
             <div className='col-8 forecast-unit'>
               {units.precipitation === 'in' ?
-                weather.current.precip_in +'in'
+                weather.current.precip_in +' in'
               :
-                weather.current.precip_mm +'mm'
+                weather.current.precip_mm +' mm'
               }
             </div> 
           </div>
