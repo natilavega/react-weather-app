@@ -15,70 +15,67 @@ export const Content = ({
   onLocationReturn,
   onSettingsOpen,
   onLanguageChange,
-  onUnitsChange
+  onUnitsChange,
 }) => {
-  
-  return(
-    <div className='app'>    
-      {!settings.is_open ? 
-        (weather.location ?
-          
+  return (
+    <div className='app'>
+      {!settings.is_open ? (
+        weather.location ? (
           // Weather
           <>
-            <Header 
-              title          = 'weather'
-              currentLang    = {settings.lang}
-              dateLang       = {dictionary.date}
-              onSettingsOpen = {onSettingsOpen} 
+            <Header
+              title='weather'
+              currentLang={settings.lang}
+              dateLang={dictionary.date}
+              onSettingsOpen={onSettingsOpen}
             />
 
-            <Weather 
-              weather    = {weather}
-              units      = {settings.units}
-              dictionary = {dictionary.weatherTags}
-              onReturn   = {onLocationReturn}
+            <Weather
+              weather={weather}
+              units={settings.units}
+              dictionary={dictionary.weatherTags}
+              onReturn={onLocationReturn}
             />
+
+            <Footer tag={dictionary.developed_by} />
           </>
-          
-        :
+        ) : (
           // Enter Location
           <>
-            <Header 
-              title          = {dictionary.locationTags.title}
-              onSettingsOpen = {onSettingsOpen} 
+            <Header
+              title={dictionary.locationTags.title}
+              onSettingsOpen={onSettingsOpen}
             />
 
             <EnterLocation
-              location    = {location}
-              placeholder = {dictionary.locationTags.search}
-              onChange    = {onLocationChange} 
-              onSubmit    = {onLocationSubmit}
-              onError     = {weather}
+              location={location}
+              placeholder={dictionary.locationTags.search}
+              onChange={onLocationChange}
+              onSubmit={onLocationSubmit}
+              onError={weather}
+              dictionary={dictionary}
             />
           </>
-        ) :
-          // Settings
-          <>
-            <Header 
-              title          = {dictionary.settingsTags.title}
-              settingsOpen   = {true}
-              onSettingsOpen = {onSettingsOpen} 
-            />
+        )
+      ) : (
+        // Settings
+        <>
+          <Header
+            title={dictionary.settingsTags.title}
+            settingsOpen={true}
+            onSettingsOpen={onSettingsOpen}
+          />
 
-            <Settings
-              dictionary       = {dictionary}
-              currentSettings  = {settings}
-              onLanguageChange = {onLanguageChange}
-              onUnitsChange    = {onUnitsChange}
-            />
-          </>
-      }
+          <Settings
+            dictionary={dictionary}
+            currentSettings={settings}
+            onLanguageChange={onLanguageChange}
+            onUnitsChange={onUnitsChange}
+          />
 
-      <Footer
-        tag = {dictionary.developed_by}
-      />
+          <Footer tag={dictionary.developed_by} />
+        </>
+      )}
     </div>
-  )
-} 
-
-
+  );
+};

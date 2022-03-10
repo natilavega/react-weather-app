@@ -6,27 +6,25 @@ import { Forecast } from './Forecast';
 export const Weather = ({ weather, units, dictionary, onReturn }) => {
   return (
     <main>
-      <div className = 'weather'>
+      <div className='weather'>
         <CurrentLocation
-          weather   = {weather}
-          onReturn  = {onReturn}
+          weather={weather}
+          onReturn={onReturn}
+          dictionary={dictionary}
         />
 
         <CurrentWeather
-          weather = {weather}
-          units   = {units}
+          weather={weather}
+          units={units}
+          dictionary={dictionary}
         />
 
-        <Forecast 
-          weather    = {weather}
-          units      = {units}
-          dictionary = {dictionary}
-        />
+        <Forecast weather={weather} units={units} dictionary={dictionary} />
       </div>
 
       <div className='weather-last_updated'>
         {dictionary.last_updated}: {weather.current.last_updated}
       </div>
     </main>
-  )
-}
+  );
+};

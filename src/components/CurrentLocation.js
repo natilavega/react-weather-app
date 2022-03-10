@@ -1,22 +1,20 @@
 import React from 'react';
-import { MdLocationOn } from 'react-icons/md';
+import { FiMapPin } from 'react-icons/fi';
 
-export const CurrentLocation = ({ weather, onReturn }) => {
-  return(
-    <div 
-      className = 'weather-location' 
-      onClick   = {onReturn}
-    >
-      <MdLocationOn size={20} />
-      <div className='weather-location-city'>
-        {weather.location.name}
-      </div>
-      <div className='offset-1 weather-location-country'>
-        {weather.location.region}
-      </div>
-      <div className='offset-2 weather-location-country'>
-        {weather.location.country}
+export const CurrentLocation = ({ weather, onReturn, dictionary }) => {
+  return (
+    <div className='weather-location custom-row' onClick={onReturn}>
+      <FiMapPin size={22} />
+      <div className='p-left'>
+        <div className='weather-location-city'>{weather.location.name}</div>
+        <div className='weather-location-country'>
+          {weather.location.region + ', '}
+          {weather.location.country}
+        </div>
+        <div className='weather-location-change'>
+          {dictionary.location_change}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};

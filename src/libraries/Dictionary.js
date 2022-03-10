@@ -1,12 +1,12 @@
 export const Dictionary = [
-  { 
-    id: 1, 
-    lang: 'en', 
+  {
+    id: 1,
+    lang: 'en',
     name: 'English',
     developed_by: 'Developed by',
     locationTags: {
-      title: 'Enter location',
-      search: 'City...'
+      title: 'Enter Location',
+      search: 'City...',
     },
     weatherTags: {
       feels_like: 'Feels Like',
@@ -16,70 +16,72 @@ export const Dictionary = [
       precipitation: 'Precipitation',
       cloud_cover: 'Cloud cover',
       wind: 'Wind',
-      last_updated: 'Last updated'
+      location_change: 'Change Location',
+      last_updated: 'Last Updated',
     },
     settingsTags: {
       title: 'Settings',
-      language: 'Language'
+      language: 'Language',
     },
     date: {
       day: [
-        'Sunday', 
-        'Monday', 
-        'Tuesday', 
+        'Sunday',
+        'Monday',
+        'Tuesday',
         'Wednesday',
-        'Thursday', 
-        'Friday', 
-        'Saturday'
+        'Thursday',
+        'Friday',
+        'Saturday',
       ],
       month: [
-        'January', 
-        'February', 
-        'March', 
-        'April', 
-        'May', 
-        'June', 
-        'July', 
-        'August', 
-        'September', 
-        'October', 
-        'November', 
-        'December'
-      ]
-    }
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ],
+    },
   },
-  { 
-    id: 2, 
-    lang: 'es', 
+  {
+    id: 2,
+    lang: 'es',
     name: 'Español',
     developed_by: 'Desarrollado por',
     locationTags: {
       title: 'Ingrese ubicación',
-      search: 'Ciudad...'
+      search: 'Ciudad...',
     },
     weatherTags: {
-      feels_like: 'Térmica',
+      feels_like: 'Sensación térmica',
       temperature: 'Temperatura',
       humidity: 'Humedad',
       pressure: 'Presión',
       precipitation: 'Precipitación',
       cloud_cover: 'Nubes',
       wind: 'Viento',
-      last_updated: 'Actualizado'
+      location_change: 'Cambiar ubicación',
+      last_updated: 'Actualizado',
     },
     settingsTags: {
       title: 'Configuración',
-      language: 'Idioma'
+      language: 'Idioma',
     },
     date: {
       day: [
         'Domingo',
-        'Lunes', 
-        'Martes', 
-        'Miercoles', 
-        'Jueves', 
-        'Viernes', 
-        'Sábado'
+        'Lunes',
+        'Martes',
+        'Miercoles',
+        'Jueves',
+        'Viernes',
+        'Sábado',
       ],
       month: [
         'Enero',
@@ -93,8 +95,8 @@ export const Dictionary = [
         'Septiembre',
         'Octubre',
         'Noviembre',
-        'Diciembre'
-      ]
-    }
-  }
-]
+        'Diciembre',
+      ],
+    },
+  },
+];

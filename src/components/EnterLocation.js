@@ -1,41 +1,37 @@
 import React from 'react';
+import { FiSearch } from 'react-icons/fi';
 import { Form } from 'react-bootstrap';
-import { AiOutlineSearch } from 'react-icons/ai';
 
-export const EnterLocation = ({ location, placeholder, onChange, onSubmit, onError }) => {
+export const EnterLocation = ({
+  location,
+  placeholder,
+  onChange,
+  onSubmit,
+  onError,
+}) => {
+  return (
+    <main>
+      <Form className='search-box' onSubmit={onSubmit}>
+        <Form.Group className='search-wrapper' controlId='formControlLocation'>
+          <Form.Control
+            as='input'
+            className='search-bar'
+            placeholder={placeholder}
+            value={location}
+            onChange={onChange}
+          />
 
-    return (
-      <main>
-        <Form 
-          className = 'search-box'
-          onSubmit  = {onSubmit}  
-        >
-          <Form.Group 
-            className='search-wrapper row'
-            controlId='formControlLocation'  
-          >
-            <Form.Control 
-              as          = 'input'
-              className   = 'search-bar col-9'
-              placeholder = {placeholder}
-              value       = {location}
-              onChange    = {onChange}
-            />
+          <button className='search-btn' type='submit'>
+            <span>
+              <FiSearch size={20} />
+            </span>
+          </button>
+        </Form.Group>
 
-            <button 
-              className = 'search-btn btn col-3' 
-              type      = 'submit'
-            >
-              <AiOutlineSearch size={26}/>
-            </button>
-          </Form.Group>
-
-          <div className='search-error'>
-            {onError.error ? onError.error.message : ''}
-          </div>
-        </Form>
-
-      </main>
-    )
-
-}
+        <div className='search-error'>
+          {onError.error ? onError.error.message : ''}
+        </div>
+      </Form>
+    </main>
+  );
+};

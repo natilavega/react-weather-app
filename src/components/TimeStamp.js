@@ -8,17 +8,12 @@ export const TimeStamp = ({ currentLang, dateLang }) => {
 
     let display;
 
-    currentLang === 'en' ?
-      display = `${day}, ${month} ${date}`
-    :
-      display = `${day} ${date} ${month} `
-    
+    currentLang === 'en'
+      ? (display = `${day}, ${month} ${date}`)
+      : (display = `${day} ${date} de ${month} `);
+
     return display;
-  }
-  
-  return (
-    <>
-      {dateBuilder(new Date())}
-    </>
-  );
-}
+  };
+
+  return <>{dateBuilder(new Date())}</>;
+};

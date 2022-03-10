@@ -1,170 +1,181 @@
+/* General */
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
 .app {
-  color: #212529;
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+  color: #292d32;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
   min-height: 100vh;
-  padding: 0 !important;
-  position: relative;
+  padding: 2em !important;
 }
 
-.header {
-  padding: 25px;
-  margin: 0 !important;
-}
-.header .col-11, .header .col-1 {
-  padding: 0 !important;
-}
-.header .col-1 {
-  text-align: right;
-}
-
-  @media (min-width: 768px) {
-    .app {
-      margin: 0 10vw;
-    }
-
-    .header {
-      padding: 50px 25px;
-    }
+@media (min-width: 768px) {
+  .app {
+    margin: 0 10vw;
   }
-  @media (min-width: 992px) {
-    .app {
-      margin: 0 20vw;
-    }
-  }
-
-.header-title {
-  font-size: 18px;
-  line-height: 35px;
-  margin: auto 0;
-  padding: 0 !important;
 }
-.header-title, .search-error {
-  font-weight: 300;
-  text-transform: uppercase;
-  padding: 0 15px;
+@media (min-width: 992px) {
+  .app {
+    margin: 0 20vw;
+  }
 }
 
 main {
-  padding: 50px 25px 25px 25px !important;
+  padding-top: 4em !important;
+}
+.p-left {
+  padding-left: 10px;
+}
+.custom-row {
+  display: flex;
+  flex-direction: row;
 }
 
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header-title {
+  font-size: 1.25em;
+  line-height: 28px;
+}
+.header-menu {
+  cursor: pointer;
+}
+
+/* EnterLocation */
 .search-wrapper {
-  border: 2px solid #212529;
-  border-radius: 25px;
-  margin: 0 !important;
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #292d32;
+  border-radius: 8px;
 }
-  .search-wrapper:focus-within {
-    box-shadow: 0 5px 5px rgba(0,0,0,.2);
-  }
 .search-bar {
-  background-color: #fff;
-  border-radius: 25px 0 0 25px;
   height: 100%;
-  margin: auto 0;
-  padding: 16px;
-  z-index: 1;
-
-  appearance: none;
+  width: 80%;
+  padding: 1em;
+  line-height: 24px;
+  border-radius: 8px 0 0 8px;
   border: none;
+  appearance: none;
   outline: none;
+
+  display: inline-block;
 }
 .search-btn {
-  background-color: #fff;
+  max-height: 52px;
+  width: 20%;
+  background: linear-gradient(#292d32, #090a0b);
   border: none;
-  border-radius: 0 25px 25px 0;
-  padding: 16px;
+  border-radius: 0 8px 8px 0;
+  color: #ffffff;
+  padding: 1em;
+}
+.search-btn span {
+  margin: auto 0;
 }
 .search-error {
-  font-size: 14px;
-  margin-top: 14px;
+  font-size: 0.75em;
+  font-weight: 300;
+  margin-top: 1em;
+  padding: 0 1em;
   text-align: center;
   transition: 0.05s;
   width: 100%;
 }
 
+/* Weather */
 .weather-location {
   cursor: pointer;
 }
 .weather-location-city {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+.weather-location-change {
+  color: #295fa3;
 }
 
 .weather-current {
-  margin: 75px 0;
+  margin: 8em 0;
 }
 .weather-current-temperature {
-  font-size: 100px;
-  font-weight: 300;
+  font-size: 80px;
   line-height: 1em;
 }
 .weather-current-description {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 1em 0;
+}
+.weather-current-feels_like {
+  display: flex;
+  flex-direction: row;
 }
 .weather-current-icon {
   margin: auto;
   text-align: center;
 }
-.weather-current-icon img{
+.weather-current-icon img {
   height: 120px;
 }
 
-.forecast {
-  padding: 40px 0;
-}
-.forecast .row {
-  margin-bottom: 20px;
+.forecast,
+.settings-conainer {
+  padding-bottom: 4em;
 }
 .forecast-tag {
-  margin-bottom: 10px;
-}
-.forecast-unit {
-  line-height: 50px;
-}
-.feels_like {
-  margin: 0 15px 20px 15px;
+  line-height: 28px;
+  margin-bottom: 1.5em;
 }
 
+/* Settings */
 .settings-group {
-  padding-bottom: 25px;
+  padding-bottom: 1.5em;
 }
 .settings-group .row {
-  padding: 0 15px;
+  padding: 0 1em;
 }
 
+.form-dropdown,
 .form-check {
   background-color: #fff;
   border: 1px solid #ced4da;
-  border-radius: 0.2rem;
-  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 28px;
+  padding: 6px 10px;
 }
 
+/* Footer */
 footer {
-  bottom: 0;
-  padding: 5px;
-  position: absolute;
   width: 100%;
 }
-
-.weather-last_updated, .credits {
+.weather-last_updated,
+.credits {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 0.75em;
   text-align: center;
 }
-
 .credits span {
-  font-weight: 700;
+  font-weight: 600;
+}
+.github {
+  color: #292d32;
+}
+.github:hover {
+  color: #295fa3;
 }

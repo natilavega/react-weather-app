@@ -49,11 +49,23 @@ v5
 
 v6
 - agregar fecha en Header                           x
-- traducir dirección del viento
 - Configuración: elegir unidades de medida          x
     Temperatura: celsius - fahrenheit
     Precipitación: mm - in 
     Presión: mb - in
     Viento: mph - kph
-- helpers
-- hooks
+
+v7
+- Actualizar repositorio GitHub.                    x
+- Rediseño UI.                                      x
+- traducir dirección del viento
+- link a repositorio en créditos.                   x
+
+
+Next
+- identificar idioma default del navegador.
+- compatibilidad con iOS.
+
+- buscado recientemente.
+- actualizar ReadMe.
+- dark mode.
