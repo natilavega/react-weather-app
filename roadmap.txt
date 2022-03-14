@@ -1,5 +1,6 @@
-WEATHER APP
-https://www.weatherapi.com/docs/
+MINWEATHER APP: Roadmap
+By Nati Lavega
+
 
 v1
 - Separar componentes                               x
@@ -9,7 +10,6 @@ v1
 - Agregar más información de api gratuita           x
 
 v2
-
 - Cambiar a idioma inglés                           x
 
 v3
@@ -60,12 +60,12 @@ v7
 - Rediseño UI.                                      x
 - traducir dirección del viento
 - link a repositorio en créditos.                   x
+- actualizar ReadMe.                                x
 
 
-Next
+What's coming next?
 - identificar idioma default del navegador.
 - compatibilidad con iOS.
 
-- buscado recientemente.
-- actualizar ReadMe.
+- búsquedas recientes.
 - dark mode.
